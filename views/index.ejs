@@ -11,9 +11,9 @@
     <h1>This is the Home Page!</h1>
     <form action="/new" method="POST">
         <label for="textinput">Input Text</label>
-        <input type="text" name="textinput">
+        <input type="text" name="textinput" required><br>
         <label for="numinput">Input Number</label>
-        <input type="number" name="numinput" value = 0>
+        <input type="number" name="numinput" value = 0 required><br>
         <button type="submit">Add Item</button>
     </form>
     <ul>
@@ -22,7 +22,7 @@
                 <div><%=item.textinput %></div>
                 <div><%=item.numinput %></div>
                 <a href="">Edit</a>
-                <a href="">Remove</a>
+                <a href="">Remove</a><hr>
             </li>
         <% }) %>
     </ul>
