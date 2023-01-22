@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Page</title>
-    <link rel="stylesheet" href="">
+    <title>Edit Item</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <section>
@@ -13,22 +13,17 @@
         <section>
             <ul>
                 <% itemList.forEach(item => { %>
-                    <% if (item._id = idItem) { %>
-                        <form action="/edit/update/<%= item._id%>" method="POST">
+                    <% if (item._id==idItem) { %>
+                        <li>
+                        <form action="/edit/update/<%= item._id %>" method="POST">
                             <label for="textinput">Edit Text</label>
                             <input type="text" name="textinput" value="<%= item.textinput %>" required><br>
                             <label for="numinput">Edit Number</label>
-                            <input type="number" name="numinput" value="<%+ item.numinput %>" required><br>
+                            <input type="number" name="numinput" value="<%= item.numinput %>" required><br>
                             <button type="submit">Confirm</button>
                             <a href="/">Cancel</a>
                         </form> 
-                    <% } else { %>
-                        <li>
-                            <div><%=item.textinput %></div>
-                            <div><%=item.numinput %></div>
-                            <a href="">Edit</a>
-                            <a href="">Remove</a><hr>
-                        </li>
+                    </li>
                     <% } %>
                 <% }) %>         
             </ul>
